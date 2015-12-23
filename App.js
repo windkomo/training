@@ -1,20 +1,24 @@
 import React from 'react';
 
+var data = [
+  {id: 1, author: 'Pete Hunt', text: 'aThis is one comment'},
+  {id: 2, author: 'Jordan Walke', text: 'This is *another* comment'}
+];
+
 class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            txt: 'state txt'
+            txt: 'state txterr'
         }
     }
     update(e) {
         this.setState({ txt: e.target.value })
     }
     render() {
-        let txt = this.props.txt
         return (
             <div>
-                <input type="text"
+                <input type='text'
                     onChange={this.update.bind(this)} />
                 <h2>{this.state.txt}</h2>
             </div>
