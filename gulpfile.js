@@ -18,7 +18,9 @@ gulp.task('webpack-dev-server', function (c) {
     myConfig.devtool = 'eval';
     myConfig.debug = true;
     // Start a webpack-dev-server
-    new WebpackDevServer(webpack(myConfig))
+    new WebpackDevServer(webpack(myConfig), {
+        hot: true
+    })
     .listen(myConfig.devServer.port, 'localhost', function (err) {
         if (err) {
             throw new gutil.PluginError('webpack-dev-server', err);

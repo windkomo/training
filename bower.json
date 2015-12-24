@@ -1,0 +1,22 @@
+{
+  "name": "training",
+  "version": "0.0.0",
+  "homepage": "https://github.com/windkomo/training",
+  "authors": [
+    "Maxime Khoy <maxime.khoy@ionisx.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0",
+    "font-awesome-stylus": "~4.4.0"
+  }
+}

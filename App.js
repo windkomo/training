@@ -9,7 +9,7 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            txt: 'state txterr'
+            txt: 'Hello sar'
         }
     }
     update(e) {
@@ -21,6 +21,8 @@ class App extends React.Component {
                 <input type='text'
                     onChange={this.update.bind(this)} />
                 <h2>{this.state.txt}</h2>
+                <h2>Ehell</h2>
+                <h2>bleuargh</h2>
             </div>
         );
     }
