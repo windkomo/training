@@ -22,7 +22,7 @@ class App extends React.Component {
                     onChange={this.update.bind(this)} />
                 <h2>{this.state.txt}</h2>
                 <h2>Ehell</h2>
-                <h2>bleuargh</h2>
+                <h2>bleuarghr</h2>
             </div>
         );
     }
