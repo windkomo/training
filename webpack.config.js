@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 
 module.exports = {
+    context: __dirname + '/app',
     entry: [
         'webpack-dev-server/client?http://localhost:3333',
         'webpack/hot/dev-server',
