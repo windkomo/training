@@ -9,6 +9,7 @@ class ExpenseList extends React.Component {
             { id: 2, title: 'Headset', description: 'Fidelio X2' }
         ];
         var expenses = data.map( e => <Expense key={ e.id } title={ e.title } description= { e.description } /> );
+
         return (
             <ul className="expense-list">
                 <li>
