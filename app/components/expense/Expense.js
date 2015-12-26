@@ -2,7 +2,7 @@ import React from 'react';
 import { Panel } from 'react-bootstrap';
 
 class Expense extends React.Component {
-    render() {
+    render () {
         return (
             <div>
                 <Panel bsStyle="primary" header={ this.props.title }>

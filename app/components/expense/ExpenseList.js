@@ -3,7 +3,7 @@ import React from 'react';
 import Expense from './Expense';
 
 class ExpenseList extends React.Component {
-    render() {
+    render () {
         var data = [
             { id: 1, title: 'G20 Food', description: 'Vegetables and steak' },
             { id: 2, title: 'Headset', description: 'Fidelio X2' }
