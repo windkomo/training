@@ -3,9 +3,9 @@ import { Panel } from 'react-bootstrap';
 
 class Expense extends React.Component {
     displayName: 'Expense'
-    propTypes: {
-        title: React.PropTypes.string,
-        description: React.PropTypes.string
+    propTypes = {
+        description: React.PropTypes.string,
+        title: React.PropTypes.string
     }
     render () {
         return (
