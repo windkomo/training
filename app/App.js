@@ -3,6 +3,7 @@ import ExpenseList from './components/expense/ExpenseList';
 import ExpenseForm from './components/expense/ExpenseForm';
 
 class App extends React.Component {
+    displayName: 'App'
     render() {
         return (
             <div>
