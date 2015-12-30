@@ -22,7 +22,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'react-hot',
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'react', 'stage-2']
                 }
             },
             {
@@ -30,7 +30,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'jsx',
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'react', 'stage-2']
                 }
             },
             {
@@ -38,7 +38,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel',
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'react', 'stage-2']
                 }
             }
         ]

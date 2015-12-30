@@ -1,32 +1,51 @@
-import React from 'react';
-import { Input } from 'react-bootstrap';
+import React, { Component, PropTypes } from 'react'
+import { Input } from 'react-bootstrap'
 
-class ExpenseForm extends React.Component {
-    displayName: 'ExpenseForm'
-    constructor () {
-        super();
-        this.state = {};
-        this.handleChange = this.handleChange.bind(this);
+class ExpenseForm extends Component {
+    constructor (props, context) {
+        super(props, context);
+        this.state = {
+            title: this.props.title || ''
+        }
     }
-    handleChange () {
+
+    handleSubmit (e) {
+        const title = e.target.value.trim()
+        if (e.which === 13) {
+            this.props.onSave(title)
+            this.setState({
+                title: ''
+            })
+        }
+    }
+
+    handleChange (e) {
         this.setState({
-            value: this.refs.input.getValue()
-        });
+            title: e.target.value
+        })
     }
+
     render () {
         return (
             <Input
+                type="text"
                 groupClassName="group-class"
                 label="Expense label"
                 labelClassName="label-class"
-                onChange={this.handleChange}
-                placeholder="Walmart food"
-                ref="input"
-                type="text"
-                value={this.state.value}
+                placeholder={this.props.placeholder}
+                autoFocus="true"
+                onChange={this.handleChange.bind(this)}
+                onKeyDown={this.handleSubmit.bind(this)}
+                value={this.state.title}
             />
-        );
+        )
     }
 }
 
-export default ExpenseForm;
+ExpenseForm.propTypes = {
+    onSave: PropTypes.func.isRequired,
+    title: PropTypes.string,
+    placeholder: PropTypes.string,
+}
+
+export default ExpenseForm

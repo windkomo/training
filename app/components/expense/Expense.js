@@ -2,11 +2,6 @@ import React from 'react';
 import { Panel } from 'react-bootstrap';
 
 class Expense extends React.Component {
-    displayName: 'Expense'
-    propTypes = {
-        description: React.PropTypes.string,
-        title: React.PropTypes.string
-    }
     render () {
         return (
             <div>
