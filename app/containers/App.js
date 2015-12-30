@@ -11,6 +11,7 @@ class App extends Component {
         const { expenses, actions } = this.props
         return (
             <div>
+                <h1>Komon</h1>
                 <Header addExpense={actions.addExpense} />
                 <ExpenseList
                     actions={actions}

@@ -1,50 +1,34 @@
-var webpack = require('webpack');
+var path    = require('path')
+var webpack = require('webpack')
 
 module.exports = {
-    context: __dirname + '/app',
+    context: path.join(__dirname, 'app'),
     entry: [
         'webpack-dev-server/client?http://localhost:3333',
         'webpack/hot/dev-server',
         './main.js'
     ],
     output: {
-        path: __dirname + '/build',
+        path: path.join(__dirname, 'static'),
         filename: 'bundle.js'
     },
     devServer: {
         inline: true,
         port: 3333
     },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'react-hot',
-                query: {
-                    presets: ['es2015', 'react', 'stage-2']
-                }
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'jsx',
-                query: {
-                    presets: ['es2015', 'react', 'stage-2']
-                }
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel',
-                query: {
-                    presets: ['es2015', 'react', 'stage-2']
-                }
-            }
-        ]
-    },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
-    watch: true
+    module: {
+        loaders: [{
+            test: /\.js$/,
+            loaders: ['react-hot', 'babel'],
+            exclude: /node_modules/,
+            include: __dirname
+        }, {
+            test: /\.css?$/,
+            loaders: ['style', 'raw'],
+            include: __dirname
+        }]
+    }
 }
