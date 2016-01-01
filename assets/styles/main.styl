@@ -2,8 +2,90 @@ $fa-font-path = '../assets/bower_components/font-awesome-stylus/fonts'
 @import '../bower_components/font-awesome-stylus/stylus/index.styl'
 @import '../bower_components/bootstrap-stylus/bootstrap/index.styl'
 
-body
-  padding: 15px
+$color-white = #FFF
+$color-blue = #248FC9
+$color-lightblue = #A2D4EF
+$color-darkblue = #055F90
+
+$nav-background-color = $color-blue
+$nav-color = $color-lightblue
+$nav-home-background-color = $color-darkblue
+$nav-home-color= $color-white
+
+$nav-active-color = $color-white
+$nav-active-background-color = lighten($color-blue, 15%)
+$nav-active-home-background-color = lighten($nav-home-background-color, 15%)
+
+$font-family-sans-serif = 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+$font-family-serif = Georgia, 'Times New Roman', Times, serif
+
+$header-height = 70px
+$nav-width = 70px
+
+header
+  height: $header-height
+  position: fixed
+  top: 0
+  left: $nav-width
+  padding-left: 10px
+  color: $nav-home-color;
+  background: $nav-background-color;
+  width: 100%
+  z-index: 100;
 
 ul.expense-list
   list-style-type: none
+
+.content-wrapper
+  position: absolute
+  top: $header-height
+  left: $nav-width
+  padding: 15px
+  padding-right: 85px
+  width: 100%
+
+.sidemenu-wrapper
+  width: $nav-width
+  background: $nav-background-color
+  position: fixed
+  top: 0
+  height: 100%
+  overflow-y: auto
+  z-index: 100
+
+  a
+    display: block
+    color: $nav-color
+    padding: 14px 0 14px 0
+    text-decoration: none
+    cursor: pointer
+
+    &.active
+      background: $nav-active-background-color
+      color: $nav-active-color
+      transition: 0.5s
+
+    &:hover
+      background: $nav-active-background-color
+      color: $nav-active-color
+      transition: 0.5s
+
+    &.home
+      background: $nav-home-background-color
+      color: $nav-home-color
+
+      &:hover
+        background: $nav-active-home-background-color
+
+.sidemenu-nav
+  position: absolute
+  top: 0
+  width: $nav-width
+  list-style: none
+  margin: 0
+  padding: 0
+
+  li
+    display: block
+    font-size: 3em
+    text-align: center

@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import ExpenseForm from './ExpenseForm'
 
-class Header extends Component {
+class ExpenseHeader extends Component {
     handleSave(title) {
         if (title.length !== 0) {
             this.props.addExpense(title)
@@ -10,18 +10,18 @@ class Header extends Component {
 
     render() {
         return (
-            <header className="header">
+            <div>
                 <ExpenseForm
                     onSave={this.handleSave.bind(this)}
                     placeholder="What did you spend money on ?"
                 />
-            </header>
+            </div>
         )
     }
 }
 
-Header.propTypes = {
+ExpenseHeader.propTypes = {
     addExpense: PropTypes.func.isRequired
 }
 
-export default Header
+export default ExpenseHeader

@@ -8781,9 +8781,71 @@ button.close {
     display: none !important;
   }
 }
-body {
-  padding: 15px;
+header {
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 70px;
+  padding-left: 10px;
+  color: #fff;
+  background: #248fc9;
+  width: 100%;
+  z-index: 100;
 }
 ul.expense-list {
   list-style-type: none;
+}
+.content-wrapper {
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  padding: 15px;
+  padding-right: 85px;
+  width: 100%;
+}
+.sidemenu-wrapper {
+  width: 70px;
+  background: #248fc9;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 100;
+}
+.sidemenu-wrapper a {
+  display: block;
+  color: #a2d4ef;
+  padding: 14px 0 14px 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.sidemenu-wrapper a.active {
+  background: #3aa3dc;
+  color: #fff;
+  transition: 0.5s;
+}
+.sidemenu-wrapper a:hover {
+  background: #3aa3dc;
+  color: #fff;
+  transition: 0.5s;
+}
+.sidemenu-wrapper a.home {
+  background: #055f90;
+  color: #fff;
+}
+.sidemenu-wrapper a.home:hover {
+  background: #0782c4;
+}
+.sidemenu-nav {
+  position: absolute;
+  top: 0;
+  width: 70px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidemenu-nav li {
+  display: block;
+  font-size: 3em;
+  text-align: center;
 }

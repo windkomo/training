@@ -2,8 +2,11 @@ import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
+import Header from '../components/layout/Header'
+import Sidemenu from '../components/layout/Sidemenu'
+
 import ExpenseList from '../components/expense/ExpenseList'
-import Header from '../components/expense/Header'
+import ExpenseHeader from '../components/expense/ExpenseHeader'
 import * as ExpenseActions from '../actions/expenses'
 
 class App extends Component {
@@ -11,12 +14,15 @@ class App extends Component {
         const { expenses, actions } = this.props
         return (
             <div>
-                <h1>Komon</h1>
-                <Header addExpense={actions.addExpense} />
-                <ExpenseList
-                    actions={actions}
-                    expenses={expenses}
-                />
+                <Header />
+                <Sidemenu />
+                <div className="content-wrapper">
+                    <ExpenseHeader addExpense={actions.addExpense} />
+                    <ExpenseList
+                        actions={actions}
+                        expenses={expenses}
+                    />
+                </div>
             </div>
         )
     }
