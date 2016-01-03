@@ -1,6 +1,7 @@
 var gulp             = require('gulp');
 var stylus           = require('gulp-stylus');
 var gutil            = require('gulp-util');
+var bootstrapStyl    = require('bootstrap-styl');
 var webpack          = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var webpackConfig    = require('./webpack.config.js');
@@ -29,7 +30,7 @@ gulp.task('webpack-dev-server', function (c) {
 
 gulp.task('styles', function () {
     gulp.src('./assets/styles/**/*')
-        .pipe(stylus())
+        .pipe(stylus({ use: bootstrapStyl(), compress: true }))
         .pipe(gulp.dest('./static/'));
 });
 

@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "babelify": "^7.2.0",
+    "bootstrap-styl": "^5.0.5",
     "classnames": "^2.2.1",
     "events": "^1.1.0",
     "react": "^0.14.3",
