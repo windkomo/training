@@ -1,23 +1,30 @@
-import React, { PropTypes, Component } from 'react'
+import React, { Component } from 'react'
+
+import MenuLink from './Menulink'
 
 class Sidemenu extends Component {
     render() {
+        const links = [
+            { label: 'Home', class: 'home', icon: 'fa-home' },
+            { label: 'Stats', icon: 'fa-bar-chart' },
+            { label: 'Settings', icon: 'fa-cog' }
+        ].map((link, index) =>
+            <MenuLink
+                key={index}
+                label={link.label}
+                class={link.class}
+                icon={link.icon}
+            />
+        )
+
         return (
             <div className="sidemenu-wrapper">
                 <div className="sidemenu-nav">
-                    <a className="home">
-                        <li className="fa fa-home" />
-                    </a>
-                    <a className="home">
-                        <li className="fa fa-bar-chart" />
-                    </a>
+                    { links }
                 </div>
             </div>
         )
     }
-}
-
-Sidemenu.propTypes = {
 }
 
 export default Sidemenu
