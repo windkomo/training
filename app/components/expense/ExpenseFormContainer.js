@@ -35,10 +35,14 @@ class ExpenseFormContainer extends Component {
         return (
             <div>
                 <Toggler
-                    label="Add an expense"
+                    labelOff="Add an expense"
+                    labelOn="Cancel"
                     onToggle={this.toggle.bind(this)}
-                    buttonClasses="btn btn-success"
-                    iconClasses="fa fa-plus fa-lg"
+                    toggled={this.state.showForm}
+                    buttonClassesOff="btn btn-success"
+                    buttonClassesOn="btn btn-danger"
+                    iconClassesOff="fa fa-plus fa-lg"
+                    iconClassesOn=""
                 />
                 { form }
             </div>

@@ -2,16 +2,25 @@ import React, { PropTypes, Component } from 'react'
 
 class Toggler extends Component {
     render() {
-        const { label, onToggle, buttonClasses, iconClasses } = this.props
+        const {
+            labelOff,
+            labelOn,
+            onToggle,
+            buttonClassesOff,
+            iconClassesOff,
+            buttonClassesOn,
+            iconClassesOn,
+            toggled
+        } = this.props
         return (
             <div>
                 <a
-                    className={buttonClasses}
-                    onClick={onToggle}
+                    className={ toggled ? buttonClassesOn : buttonClassesOff }
+                    onClick={ onToggle }
                 >
                     <i
-                        className={iconClasses}
-                    /> {label}
+                        className={ toggled ? iconClassesOn : iconClassesOff }
+                    /> { toggled ? labelOn : labelOff }
                 </a>
             </div>
         )
@@ -19,10 +28,14 @@ class Toggler extends Component {
 }
 
 Toggler.propTypes = {
-    label: PropTypes.string,
+    labelOff: PropTypes.string,
+    labelOn: PropTypes.string,
     onToggle: PropTypes.func.isRequired,
-    buttonClasses: PropTypes.string,
-    iconClasses: PropTypes.string
+    buttonClassesOff: PropTypes.string,
+    iconClassesOff: PropTypes.string,
+    buttonClassesOn: PropTypes.string,
+    iconClassesOn: PropTypes.string,
+    toggled: PropTypes.bool
 }
 
 export default Toggler
