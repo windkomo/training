@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Input } from 'react-bootstrap'
+import { Input, Button } from 'react-bootstrap'
 
 class ExpenseForm extends Component {
     constructor (props, context) {
@@ -10,13 +10,13 @@ class ExpenseForm extends Component {
     }
 
     handleSubmit (e) {
-        const title = e.target.value.trim()
-        if (e.which === 13) {
-            this.props.onSave(title)
-            this.setState({
-                title: ''
-            })
-        }
+        e.preventDefault()
+        const title = this.state.title.trim()
+
+        this.props.onSave(title)
+        this.setState({
+            title: ''
+        })
     }
 
     handleChange (e) {
@@ -27,17 +27,26 @@ class ExpenseForm extends Component {
 
     render () {
         return (
-            <Input
-                type="text"
-                groupClassName="group-class"
-                label="Expense label"
-                labelClassName="label-class"
-                placeholder={this.props.placeholder}
-                autoFocus="true"
-                onChange={this.handleChange.bind(this)}
-                onKeyDown={this.handleSubmit.bind(this)}
-                value={this.state.title}
-            />
+            <div>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <Input
+                        type="text"
+                        groupClassName="group-class"
+                        label="Expense label"
+                        labelClassName="label-class"
+                        placeholder={this.props.placeholder}
+                        autoFocus="true"
+                        onChange={this.handleChange.bind(this)}
+                        value={this.state.title}
+                    />
+                    <Button
+                        type="submit"
+                        bsStyle="primary"
+                    >
+                        Add
+                    </Button>
+                </form>
+            </div>
         )
     }
 }
