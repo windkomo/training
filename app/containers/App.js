@@ -4,7 +4,7 @@ import Header from '../components/layout/Header'
 import Sidemenu from '../components/layout/Sidemenu'
 
 import ExpenseList from '../components/expense/ExpenseList'
-import ExpenseHeader from '../components/expense/ExpenseHeader'
+import ExpenseFormContainer from '../components/expense/ExpenseFormContainer'
 
 class App extends Component {
     render() {
@@ -14,7 +14,7 @@ class App extends Component {
                 <Header />
                 <Sidemenu />
                 <div className="content-wrapper">
-                    <ExpenseHeader addExpense={addExpense} />
+                    <ExpenseFormContainer addExpense={addExpense} />
                     <ExpenseList
                         actions={actions}
                         expenses={expenses}
@@ -27,7 +27,8 @@ class App extends Component {
 
 App.propsTypes = {
     expenses: PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequired
+    actions: PropTypes.object.isRequired,
+    addExpense: PropTypes.func.isRequired
 }
 
 export default App
