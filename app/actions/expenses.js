@@ -21,3 +21,9 @@ export function deleteExpense (id) {
         id
     }
 }
+
+export function toggleExpenseForm () {
+    return {
+        type: ActionTypes.TOGGLE_EXPENSE_FORM,
+    }
+}

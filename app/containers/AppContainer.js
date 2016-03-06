@@ -7,12 +7,12 @@ import * as ExpenseActions from '../actions/expenses'
 
 class AppContainer extends Component {
     render() {
-        const { expenses, actions } = this.props
+        const { expenses, expenseForm, actions } = this.props
         return (
             <App
-                addExpense={actions.addExpense}
                 actions={actions}
                 expenses={expenses}
+                expenseForm={expenseForm}
             />
         )
     }
@@ -20,12 +20,14 @@ class AppContainer extends Component {
 
 AppContainer.propsTypes = {
     expenses: PropTypes.array.isRequired,
+    expenseForm: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
 }
 
 function mapStateToProps (state) {
     return {
-        expenses: state.expenses
+        expenses: state.expenses.expenses,
+        expenseForm: state.expenseForm
     }
 }
 

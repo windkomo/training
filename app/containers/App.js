@@ -8,13 +8,17 @@ import ExpenseFormContainer from '../components/expense/ExpenseFormContainer'
 
 class App extends Component {
     render() {
-        const { expenses, actions, addExpense } = this.props
+        const { actions, expenses, expenseForm } = this.props
         return (
             <div>
                 <Header />
                 <Sidemenu />
                 <div className="content-wrapper">
-                    <ExpenseFormContainer addExpense={addExpense} />
+                    <ExpenseFormContainer
+                        expenseForm={expenseForm}
+                        toggle={actions.toggleExpenseForm}
+                        addExpense={actions.addExpense}
+                    />
                     <ExpenseList
                         actions={actions}
                         expenses={expenses}

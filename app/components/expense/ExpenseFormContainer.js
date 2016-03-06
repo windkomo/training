@@ -19,13 +19,11 @@ class ExpenseFormContainer extends Component {
     }
 
     toggle() {
-        this.setState({
-            showForm: !this.state.showForm
-        })
+        this.props.toggle()
     }
 
     render() {
-        const form = this.state.showForm ?
+        const form = this.props.expenseForm.visible ?
                     <ExpenseForm
                         onSave={this.handleSave.bind(this)}
                         placeholder="What did you spend money on ?"
@@ -38,7 +36,7 @@ class ExpenseFormContainer extends Component {
                     labelOff="Add an expense"
                     labelOn="Cancel"
                     onToggle={this.toggle.bind(this)}
-                    toggled={this.state.showForm}
+                    toggled={this.props.expenseForm.visible}
                     buttonClassesOff="btn btn-success"
                     buttonClassesOn="btn btn-danger"
                     iconClassesOff="fa fa-plus fa-lg"
@@ -51,7 +49,9 @@ class ExpenseFormContainer extends Component {
 }
 
 ExpenseFormContainer.propTypes = {
-    addExpense: PropTypes.func.isRequired
+    addExpense: PropTypes.func.isRequired,
+    toggle: PropTypes.func.isRequired,
+    expenseForm: PropTypes.object.isRequired
 }
 
 export default ExpenseFormContainer
