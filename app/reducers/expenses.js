@@ -1,7 +1,10 @@
-import { ADD_EXPENSE, EDIT_EXPENSE, DELETE_EXPENSE } from '../constants/ActionTypes'
+import { ADD_EXPENSE, EDIT_EXPENSE, DELETE_EXPENSE, TOGGLE_EXPENSE_FORM } from '../constants/ActionTypes'
 
 const initialState = {
-    expenses: []
+    expenses: [],
+    expenseForm: {
+        visible: false
+    }
 }
 
 export default function expenses (state = initialState, action) {
@@ -26,6 +29,13 @@ export default function expenses (state = initialState, action) {
                 expenses: state.expenses.filter(expense =>
                     expense.id !== action.id
                 )
+            })
+
+        case TOGGLE_EXPENSE_FORM:
+            return Object.assign({}, state, {
+                expenseForm: {
+                    visible: !state.expenseForm.visible
+                }
             })
 
         default:

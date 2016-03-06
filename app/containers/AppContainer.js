@@ -27,7 +27,7 @@ AppContainer.propsTypes = {
 function mapStateToProps (state) {
     return {
         expenses: state.expenses.expenses,
-        expenseForm: state.expenseForm
+        expenseForm: state.expenses.expenseForm
     }
 }
 
